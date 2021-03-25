@@ -195,7 +195,7 @@ class Libros extends Controller{
 		
 		$dato = $this->request->getPost('search');
 		
-		$datos['libros']= $libro->like('titulo', $dato)->orLike('autor', $dato)->orLike('editorial', $dato)->findALL();
+		$datos['libros']= $libro->like('titulo', $dato)->orLike('autor', $dato)->orLike('editorial', $dato)->orLike('descripcionc', $dato)->orLike('descripcion', $dato)->findALL();
 
 
 		$datos['cabecera'] = view('template/cabecera');
