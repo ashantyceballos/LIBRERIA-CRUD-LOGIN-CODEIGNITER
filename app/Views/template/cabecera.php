@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,7 +32,8 @@
                 Administrar
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="nav-link text-dark" href="#"><?php echo session('usuario'); ?><span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-dark" href="#"><?php echo session('usuario');?><span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-dark" href="<?=base_url('listar')?>">Libros</a>
                     <?php 
                         if (isset($autenticado)) {
                     ?>
@@ -41,7 +41,7 @@
                     <?php    
                         }else{
                     ?>
-                        <a class="nav-link text-dark" href="<?php echo base_url('/login') ?>"> Iniciar sesión <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-dark" href="<?php echo base_url('/salir') ?>"> Cerrar sesión <span class="sr-only">(current)</span></a>
                     <?php 
                         }
                     ?>
