@@ -25,6 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?=base_url('crear')?>">Agregar libros</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?=base_url('libreriaC')?>">Ver todos los libros</a>
+                </li>
             </ul>         
         </div>
         <ul class="nav-item dropdown text-white">
@@ -49,7 +52,7 @@
                 </div>
         </ul>   
         <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url('/buscar')?>">
-            <input class="form-control mr-sm-2" size="70" maxlength="90" name="search" type="search" placeholder="Buscar" aria-label="search">
+            <input class="form-control mr-sm-2" size="50" maxlength="90" name="search" type="search" placeholder="Buscar" aria-label="search">
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
         </form>
         </div>
