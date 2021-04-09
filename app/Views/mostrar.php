@@ -52,5 +52,6 @@
         </div>
         <p><strong>Descripción: </strong><br><?=$libro['descripcion'];?><br></p>
         <a href="<?=base_url('libreria')?>" class="btn btn-info" type="button">Regresar</a>
+        <button type="button" class="btn btn-info fas fa-print" onclick="javascrip:window.print()">Imprimir</button>
    </body>
 <?= $pie ?>
