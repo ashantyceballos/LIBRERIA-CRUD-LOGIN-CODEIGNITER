@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Libro;
+use Dompdf\Dompdf;
 
 class Libros extends Controller{
 
@@ -179,6 +180,16 @@ class Libros extends Controller{
 
         return view('libros/libreria',$datos);
     }
+    public function libreriaC(){
+
+        $libro = new Libro();
+        $datos['libros']=$libro->orderBy('id','ASC')->findAll();
+        
+        $datos['cabecera']=view('template/cabecera');
+        $datos['pie']=view('template/pie');
+
+        return view('libros/libreriaC',$datos);
+    }
     public function mostrar($id = null)
 	{
 		$libro = new Libro();
@@ -202,4 +213,21 @@ class Libros extends Controller{
 		$datos['pie'] = view('template/pie');
 		return view('buscar', $datos);
 	}
+    public function imprimir(){
+        $libro = new Libro();
+        $datos['libros']=$libro->orderBy('id','ASC')->findAll();
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml(view('libros/impresiones',$datos));
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();  
+
+    }
 }
