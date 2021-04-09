@@ -60,7 +60,7 @@ $routes->post('actualizar', 'Libros::actualizar');
 $routes->get('libreria', 'Libros::libreria');
 $routes->get('mostrar/(:num)', 'Libros::mostrar/$1');
 $routes->post('buscar', 'Libros::buscar');
-
+$routes->get('libreriaC', 'Libros::libreriaC');
 $routes->get('/', 'Home::index');
 $routes->get('/inicio', 'Home::inicio');
 $routes->post('/login', 'Home::login');
